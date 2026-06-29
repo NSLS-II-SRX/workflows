@@ -240,7 +240,7 @@ def xas_fly_exporter(uid, api_key=None, dry_run=False):
     create_subdir(root)
 
     # Identify scan streams
-    scan_streams = [s for s in hdr if s != "baseline" and "monitor" not in s]
+    scan_streams = [s for s in hdr if "scan" in s]
 
     # ROI information
     roi_num = start_doc["scan"]["roi_num"]
