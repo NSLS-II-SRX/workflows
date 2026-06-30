@@ -145,8 +145,8 @@ def xas_step_exporter(scanid, api_key=None, dry_run=False):
         raise KeyError("SRS not found in data!")
     # Include fluorescence data if present, allow multiple rois
     if "xs" in h.start["detectors"]:
-        if "ROI" in h.start["scan"].keys():
-            roinum = list(h.start["scan"]["ROI"])
+        if "roi_num" in h.start["scan"].keys():
+            roinum = list(h.start["scan"]["roi_num"])
         else:
             roinum = [1]  # if no ROI key found, assume ROI 1
         logger.info(roinum)
